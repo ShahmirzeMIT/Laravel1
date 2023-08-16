@@ -2,25 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GetData;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("user", [UserController::class, 'viewload']);
+// Route::get("login", [UserController::class, 'showLoginForm'])->name('login');
+// Route::post("login", [UserController::class, 'login']);
 
-// Route::get('/home',function (){
-//     return view('home');
-// });
-
-// Route::get('/about',function (){
-//     return view('about');
-// });
-
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
-
-
-// Route::view('/hello', 'hello');
-// Route::view('/xyz', 'contact');
+Route::get("qeydiyyat", [GetData::class, 'showData'])->name('qeydiyyat');
+Route::post("qeydiyyat", [GetData::class, 'ShowMyData']);
