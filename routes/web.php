@@ -13,3 +13,10 @@ Route::get('/', function () {
 
 Route::get("qeydiyyat", [GetData::class, 'showData'])->name('qeydiyyat');
 Route::post("qeydiyyat", [GetData::class, 'ShowMyData']);
+
+Route::view("warn",'warn');
+Route::view("check",'check');
+
+Route::group(['middleware'=>['protectedPage']],function (){
+    Route::view("check2",'check2');
+});
